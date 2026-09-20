@@ -33,3 +33,16 @@ env/
 .vscode/
 *.sublime-project
 *.sublime-workspace
+
+# Agent skills and customizations
+.agents/
+.agent/
+_agents/
+_agent/
+skills-lock.json
+
+# Documents
+docs/
+**/docs/
+assets/docs/
+
