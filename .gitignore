@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Temporary / scratch files
+scratch/
+*.tmp
+
+# Python cache (if any scripts run)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+
+# Editor directories
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace

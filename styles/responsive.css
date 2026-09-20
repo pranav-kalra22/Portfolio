@@ -1,0 +1,273 @@
+/* ==========================================================================
+   PRANAV KALRA — RESPONSIVE DESIGN & ACCESSIBILITY ENHANCEMENTS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   TABLET & INTERMEDIATE BREAKPOINTS (max-width: 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-portrait-card {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .proof-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .proof-item:nth-child(4),
+  .proof-item:nth-child(5) {
+    border-left-color: var(--border-light);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .timeline-item {
+    grid-template-columns: 180px 1fr;
+    gap: 1.5rem;
+  }
+
+  .skills-matrix {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .edu-achieve-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .tab-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .case-study-quick-specs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE BREAKPOINT (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .container, .container-narrow {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Header & Mobile Navigation */
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-desktop {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-light);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-lg);
+    display: none;
+  }
+
+  .nav-desktop.mobile-open {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .nav-link.active::after {
+    display: none;
+  }
+
+  .nav-link.active {
+    color: var(--accent-primary);
+  }
+
+  /* Proof points wrap */
+  .proof-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+
+  .proof-item:last-child {
+    grid-column: span 2;
+  }
+
+  .proof-item {
+    padding-left: 1rem;
+  }
+
+  /* Experience Timeline */
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .timeline-body {
+    padding: 1.5rem;
+  }
+
+  /* Core pillars */
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Skills */
+  .skills-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  /* Case study */
+  .case-study-header {
+    padding: 1.75rem 1.25rem 1.25rem 1.25rem;
+  }
+
+  .case-study-body {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .case-study-tabs {
+    padding: 0.25rem 1.25rem 0 1.25rem;
+  }
+
+  .tab-btn {
+    padding: 0.6rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .tab-equal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .supporting-project-card {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Modal */
+  .modal-container {
+    max-height: 95vh;
+  }
+
+  .resume-iframe {
+    height: 50vh;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SMALL MOBILE (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-item:last-child {
+    grid-column: span 1;
+  }
+
+  .case-study-quick-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-method-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ACCESSIBILITY: REDUCED MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .brand-status-dot {
+    animation: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   PRINT STYLES
+   -------------------------------------------------------------------------- */
+@media print {
+  .site-header,
+  .menu-toggle,
+  .hero-actions,
+  .case-study-tabs,
+  .contact-form-card,
+  .modal-backdrop,
+  .site-footer {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  .tab-panel {
+    display: block !important;
+    margin-bottom: 2rem;
+  }
+
+  .section {
+    padding: 2rem 0 !important;
+    page-break-inside: avoid;
+  }
+}
