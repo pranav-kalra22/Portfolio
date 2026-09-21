@@ -16,6 +16,7 @@ function initComparisonSlider() {
 
   function setSliderPosition(x) {
     const rect = container.getBoundingClientRect();
+    if (rect.width === 0) return;
     let offsetX = x - rect.left;
     if (offsetX < 0) offsetX = 0;
     if (offsetX > rect.width) offsetX = rect.width;
@@ -25,6 +26,11 @@ function initComparisonSlider() {
     handle.style.left = `${percentage}%`;
     handle.setAttribute('aria-valuenow', Math.round(percentage));
   }
+
+  // Set initial position to 50%
+  afterWrap.style.width = '50%';
+  handle.style.left = '50%';
+  handle.setAttribute('aria-valuenow', '50');
 
   // Mouse Events
   container.addEventListener('mousedown', (e) => {
@@ -62,11 +68,13 @@ function initComparisonSlider() {
   handle.addEventListener('keydown', (e) => {
     const current = parseFloat(handle.getAttribute('aria-valuenow') || '50');
     if (e.key === 'ArrowLeft') {
+      e.preventDefault();
       const next = Math.max(0, current - 5);
       afterWrap.style.width = `${next}%`;
       handle.style.left = `${next}%`;
       handle.setAttribute('aria-valuenow', next);
     } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
       const next = Math.min(100, current + 5);
       afterWrap.style.width = `${next}%`;
       handle.style.left = `${next}%`;
