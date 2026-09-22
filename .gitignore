@@ -41,8 +41,6 @@ _agents/
 _agent/
 skills-lock.json
 
-# Documents
-docs/
-**/docs/
-assets/docs/
-
+# Vercel
+.vercel/
+.vercel_build_output/

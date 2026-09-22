@@ -1,0 +1,19 @@
+{
+  "name": "pranav-kalra-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio and verified engineering case studies of Pranav Kalra - Software & AI Systems Engineer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "software-engineer",
+    "ai-systems",
+    "distributed-systems",
+    "vit-vellore"
+  ],
+  "author": "Pranav Kalra",
+  "license": "MIT"
+}
